@@ -24,7 +24,7 @@ class CSFramework_Option_Image extends CSFramework_Options {
 
     if( ! empty( $value ) ) {
       $attachment = wp_get_attachment_image_src( $value, 'thumbnail' );
-      $preview    = $attachment[0];
+      $preview    = ($attachment) ? $attachment[0] : $value;
     }
 
     echo '<div class="cs-image-preview'. $hidden .'"><div class="cs-preview"><i class="fa fa-times cs-remove"></i><img src="'. $preview .'" alt="preview" /></div></div>';
